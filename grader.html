@@ -64,6 +64,7 @@
       </div>
       -->
       <div class = "row results">
+        <p class="teacherrem">Has the program put something the student got right in the problem chunks column? Click the chunk in the Problem Chunks column that should be correct, and that specific chunk will be factored out of the calculations. <p>
         <table id="resulttab" class = "table table-striped">
         </table>
         <p>(Refresh page to calculate next test)</p>
@@ -274,7 +275,7 @@
        </tr>
       </table> 
     </td>
-    <td> 
+    <td class="teacherrem"> 
       <table>
        <tr>
        <!-- add table headers so people know what's what-->
@@ -289,10 +290,13 @@
       }
   } 
 
+
+  var teachermode = true //this mode hides the Problem Chunks and Analysis columns.
+
   //TODO add a selector dropdown that lets you use different word lists (for spanish and the like)
-  //var key = ["fan", "blade", "camped"];
+  var key = ["fan", "blade", "camped"];
   //var key = ["camped", "chewed"]
-  var key = ["fan", "pet", "dig", "rob", "hope", "wait", "gum", "sled", "stick", "shine", "dream", "blade", "coach", "fright", "chewed", "crawl", "wishes", "thorn", "shouted", "spoil", "growl", "third", "camped", "tries", "clapping", "riding"];
+  //var key = ["fan", "pet", "dig", "rob", "hope", "wait", "gum", "sled", "stick", "shine", "dream", "blade", "coach", "fright", "chewed", "crawl", "wishes", "thorn", "shouted", "spoil", "growl", "third", "camped", "tries", "clapping", "riding"];
   var groups = {"ic": {name: "Initial Consonants", corr: [], wrong: []},
                 "fc": {name: "Final Consonants", corr: [], wrong: []},
                 "sv": {name: "Short Vowels", corr: [], wrong: []},
@@ -312,6 +316,18 @@
       //this logic is kinda backwards tbh
       if (index == -1){
           index = 0;
+
+          if($(".infield").val() == "password"){
+
+              //if you're a teacher, reading this field to access admin mode, you deserve it!
+              //but REMEMBER UNCLE BEN! with great power comes great responsibility.
+              //admin mode is never 100% correct! PLEASE PLEASE PLEASE verify the program's output as correct.
+
+              teachermode = false
+              alert("Admin mode on!")
+            }
+          $(".infield").val(" ") 
+
           $("#basic-addon1").text(words[0]);
           $(".infobut").text("Next Word");
           $(".infield").prop("placeholder", "")
@@ -357,7 +373,7 @@
               <th>Attempt Word</th>
               <th>Attempt Chunks</th>
               <th>Correct Chunks</th>
-              <th>Problem Chunks</th>
+              <th class="teacherrem">Problem Chunks</th>
             </tr>`
           $(tabhead).appendTo($("#outputtab"))
 
@@ -380,7 +396,14 @@
       wrong.forEach(c => {
           groups[c.group]["wrong"].push(c)
         })
-      showAnswers()
+
+      if (teachermode){
+          $('.teacherrem').hide();
+          //hide all elements with class teacherrem
+        }
+      else{
+          showAnswers()
+        }
     }
 
   function showAnswers(){
