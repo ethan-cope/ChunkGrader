@@ -9,9 +9,23 @@
   }
   .inputdiv{
     margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    max-width: 38rem;
+  }
+  .teacherrem{
+    margin-top: 1rem;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1rem;
+  }
+  .outputdiv{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
   }
   .center {
     margin: auto;
@@ -40,35 +54,47 @@
   }
 </style>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <html>
   <div class="col">
-    <div class="card inputdiv" style="width: 28rem;">
+    <div class="card inputdiv">
       <div class = card-body>
         <h2>Grader</h2>
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">Correct Word</span>
-            </div>
-            <input type="text" class="form-control infield" id="wordtext" placeholder="kid's word">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Correct Word</span>
           </div>
-        <button class="infobut btn btn-info" onclick="hasbeen(key)">Get Started!</button>
-      </div>
+          <input type="text" class="form-control infield" id="wordtext" placeholder="kid's word">
+        </div>
+      <button class="infobut btn btn-info" onclick="hasbeen(key)">Get Started!</button>
     </div>
-    <div class="outputdiv">
-      <table class = "table table-striped", id = "outputtab">
-      </table>
-      <!--
-      <div class = "row resultsbutton">
-        <button class="btn btn-info" onclick="parseCorr()">Calc Answers</button>
-      </div>
-      -->
-      <div class = "row results">
-        <p class="teacherrem">Has the program put something the student got right in the problem chunks column? Click the chunk in the Problem Chunks column that should be correct, and that specific chunk will be factored out of the calculations. <p>
-        <table id="resulttab" class = "table table-striped">
-        </table>
-        <p>(Refresh page to calculate next test)</p>
-      </div>
+  </div>
+
+  <div class="outputdiv table-responsive">
+    <table class = "table table-striped", id = "outputtab">
+    </table>
+    <!--
+    <div class = "row resultsbutton">
+      <button class="btn btn-info" onclick="parseCorr()">Calc Answers</button>
     </div>
+    -->
+  </div>
+
+  <div class = "row outputdiv results ">
+    <div class = card-body>
+      <p class="teacherrem">Is the grader wrong? There's a chance that the program will have a false positive, which throws off the grade calculations. If this happens, just click on the incorrectly flagged chunk in the PROBLEM CHUNKS column above, and the grader will correct itself.  </p>
+    </div>
+    <div class = "teacherrem table-responsive">
+      <table id="resulttab" class = "table table-striped "> </table>
+    </div>
+
+<div class = card-body>
+      <p>(Refresh page to grade next test)</p>
+    </div>
+
+  </div>
+
   </div>
 </html>
 
@@ -95,7 +121,7 @@
           else if(/sh|ch|th/.test(this.val)){
               return "di"
             }
-          else if(/sl|st|dr|bl|fr|cr|mp|tr|sp|gr|cl/.test(this.val)){
+          else if(/sl|st|dr|bl|fr|cr|tr|sp|gr|cl/.test(this.val)){ // + removed mp
               return "bl"
             }
           else if(/ai|ea|oa|igh/.test(this.val)){
@@ -443,6 +469,7 @@
   //enter key handler
   $( document ).ready(function() {
       $(".outputdiv").hide()
+      //$(".results").hide()
 
       $('#wordtext').on('keyup',function(code){
           if (code.which === 13){
