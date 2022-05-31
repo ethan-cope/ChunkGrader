@@ -1,0 +1,69 @@
+  .wrong{
+    background-color: tomato;
+    border: 1px dotted black;
+  }
+  .inputdiv{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    max-width: 38rem;
+  }
+  .teacherrem{
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+  }
+  .outputdiv{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+  }
+  .topbanner {
+	padding: 15px;
+	border-radius: 10px;
+
+	margin-top: 1rem;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1rem;
+	width: auto;
+    max-width: 38rem;
+  }
+  .buttondiv{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: auto;
+    max-width: 50rem;
+  }
+ 
+  .spaced{
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+  }
+  .bigtext{
+    font-size:1.25em;
+  }
+  .table{
+    margin:1em;
+    padding:1em;
+  }
+  .pco{
+    cursor: pointer;
+  }
+  .pcf{
+    background-color: limegreen;
+    border: 1px dotted black;
+    cursor: pointer;
+  }
+
