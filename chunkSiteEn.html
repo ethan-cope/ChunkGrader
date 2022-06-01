@@ -1,0 +1,51 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+<link rel="stylesheet" type="text/css" href="carTemplate.css">
+<script src="chunkScriptEn.js"></script> 
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<html>
+  <div class="col">
+    <div class="card inputdiv">
+      <div class = card-body>
+        <h2>Grader</h2>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Correct Word</span>
+          </div>
+          <input type="text" class="form-control infield" id="wordtext" placeholder="kid's word">
+        </div>
+      <button class="infobut btn btn-info" onclick="hasbeen(key)">Get Started!</button>
+    </div>
+  </div>
+
+  <div class="outputdiv table-responsive">
+    <table class = "table table-striped", id = "outputtab">
+    </table>
+    <!--
+    <div class = "row resultsbutton">
+      <button class="btn btn-info" onclick="parseCorr()">Calc Answers</button>
+    </div>
+    -->
+  </div>
+
+  <div class = "row outputdiv results ">
+    <div class = card-body>
+      <p class="teacherrem">Is the grader wrong? There's a chance that the program will have a false positive, which throws off the grade calculations. If this happens, just click on the incorrectly flagged chunk in the PROBLEM CHUNKS column above, and the grader will correct itself.  </p>
+    </div>
+    <div class = "teacherrem table-responsive">
+      <table id="resulttab" class = "table table-striped "> </table>
+    </div>
+
+<div class = card-body>
+      <p>(Refresh page to grade next test)</p>
+    </div>
+
+  </div>
+
+  </div>
+</html>
+

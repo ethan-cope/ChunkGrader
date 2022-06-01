@@ -1,0 +1,34 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+<script src="phonicsScriptEn.js"></script> 
+<link rel="stylesheet" type="text/css" href="carTemplate.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<html>
+  <div class="col">
+    <div class="card inputdiv">
+      <div class="card-body">
+        <h2> Phonics Grader </h2>
+      </div>
+
+       
+      <div class="iact centercard card">
+        <h1 id="testword" style="margin:auto;" class="card-title"> Word Here</h1>
+        <p id="testwordgroup" style="margin:auto;" class="card-text"> Group Here </p>
+      </div>
+
+      <div class="iact buttondiv btn-group btn-group-lg" role="group" aria-label="Selection">
+        <button id="RightButton" type="button" class="btn btn-success">Right</button>
+        <button id="WrongButton" type="button" class="btn btn-danger">Wrong</button>
+      </div>
+
+      <div class= "table-responsive outputdiv">
+        <table id="resulttab" class="table"></table>
+      </div>
+
+    </div>
+  </div>
+</html>
