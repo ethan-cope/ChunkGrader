@@ -237,6 +237,7 @@ var wrong = []
 var vals = [];
 var index = -1;
 
+var done = false
 function hasbeen(words){
   //this logic is kinda backwards tbh
   if (index == -1){
@@ -257,7 +258,8 @@ function hasbeen(words){
 	  $(".infobut").text("Next Word");
 	  $(".infield").prop("placeholder", "")
 	}
-  else if (index == words.length-1){
+  else if (index == words.length-1 && !done){
+	  done = true
 	  vals.push($(".infield").val())
 	  $(".infield").val(" ") 
 
@@ -265,7 +267,7 @@ function hasbeen(words){
 	  $(".outputdiv").slideDown()
 	  parseCorr()
 	}
-  else{
+  else if (index < words.length -1){
 	  vals.push($(".infield").val())
 	  $(".infield").val(" ") 
 	  //sets the NEXT word for reading in
@@ -313,7 +315,6 @@ function parseCorr(wrongIn= null){
 	  })
 	}
   //console.log(agg)
-  //console.log(wrong)
   agg.forEach(c => {
 	  groups[c.group]["corr"].push(c)
 	})

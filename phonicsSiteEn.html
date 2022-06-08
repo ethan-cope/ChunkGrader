@@ -9,12 +9,14 @@
 
 <html>
   <div class="col">
-    <div class="card inputdiv">
+    <div class="card wide-inputdiv">
       <div class="card-body">
-        <h2> Phonics Grader </h2>
+        <h2> English Phonics Survey </h2>
       </div>
 
        
+      
+      <!--
       <div class="iact centercard card">
         <h1 id="testword" style="margin:auto;" class="card-title"> Word Here</h1>
         <p id="testwordgroup" style="margin:auto;" class="card-text"> Group Here </p>
@@ -24,7 +26,30 @@
         <button id="RightButton" type="button" class="btn btn-success">Right</button>
         <button id="WrongButton" type="button" class="btn btn-danger">Wrong</button>
       </div>
+      -->
+      <div class="iact centercard">
+        <table id="wordstab" class="table">
+          <tr class="HIDE">
+            <td>FOUR</td>
+            <td>FOUR</td>
+            <td>FOUR</td>
+            <td>FOUR</td>
+            <td>FOUR</td>
+          </tr>
+        </table>
 
+        <div class="input-group">
+          <div class="input-group-prepend">
+
+                  <button id="nextbutton" class="btn btn-dark button-lg">Next</button>
+          </div>
+          <input type="text" class="namein form-control" placeholder="Name"> 
+          <input type="text" class="form-control" placeholder="School"> 
+        </div>
+
+      </div>
+
+        
       <div class= "table-responsive outputdiv">
         <table id="resulttab" class="table"></table>
       </div>
@@ -32,3 +57,4 @@
     </div>
   </div>
 </html>
+

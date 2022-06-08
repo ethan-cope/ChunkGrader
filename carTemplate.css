@@ -1,3 +1,11 @@
+* {
+    -webkit-print-color-adjust: exact !important;   /* Chrome, Safari, Edge */
+    color-adjust: exact !important;                 /*Firefox*/
+}
+
+.dropdown-backdrop {
+    position: static;
+}
 
 .inputdiv{
 	margin-top: 1rem;
@@ -6,6 +14,14 @@
 	margin-right: auto;
 	width: auto;
 	max-width: 38rem;
+}
+.wide-inputdiv{
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	margin-left: auto;
+	margin-right: auto;
+	width: auto;
+	max-width: 60rem;
 }
 .teacherrem{
 	margin-top: 1rem;
@@ -27,20 +43,7 @@
 .centercard{
 	margin: auto;
 	min-width: 75%;
-	padding: 10px;
-
-}
-
-.topbanner {
-	padding: 15px;
-	border-radius: 10px;
-
-	margin-top: 1rem;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 1rem;
-	width: auto;
-	max-width: 38rem;
+	padding: 1px;
 }
 
 .dotborder {
@@ -86,6 +89,14 @@
 }
 
 .wrong{
-	background-color: tomato;
+	background-color: tomato; 
 	border: 1px dotted black;
 }
+
+.wrongtoggle{
+	background-color: tomato;
+	border-bottom: 3px dashed black;
+	cursor: pointer;
+}
+
+
