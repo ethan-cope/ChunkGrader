@@ -61,6 +61,10 @@
 	max-width: 50rem;
 }
 
+.trHideOnPrint{
+
+}
+
 .spaced{
 	margin-top: .5rem;
 	margin-bottom: .5rem;
@@ -73,6 +77,10 @@
 .table{
 	margin:1em;
 	padding:1em;
+}
+
+.phontable{
+	max-width:90%;
 }
 
 .pco{
@@ -90,12 +98,10 @@
 
 .wrong{
 	background-color: tomato; 
-	border: 1px dotted black;
 }
 
 .wrongtoggle{
 	background-color: tomato;
-	border-bottom: 3px dashed black;
 	cursor: pointer;
 }
 
