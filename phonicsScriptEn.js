@@ -28,8 +28,8 @@ words["Consonants"]  = ["d", "l", "n", "s", "x",
 						"c", "h", "m", "r", "k", 
 						"w", "g", "b", "f", "q", "v"]
 
-words["Vowels"]      = ["e", "i", "a", "o", "u",
-					    "E", "I", "A", "O", "U"]
+words["Vowels"]      = ["short E", "short I", "short A", "short O", "short U",
+					    "long E", "long I", "long A", "long O", "long U"]
 
 words["Short vowel"] = ["sip", "mat", "let", "bun", "hog", "rut", "fit", "bat", "hot", "set"] 
 words["Consonant blend short vowel"] = ["slip", "brag", "trap", "skit", "camp", "drink", "glad", "clop", "plug", "stand"] 
@@ -62,8 +62,7 @@ defInfoStr = "SAY: \"I want you to read each line of words aloud to me. Do your 
 info["Consonants"] = ["SAY: \"Look at these letters. Can you tell me the sound that each letter makes?\"",
 				  `If the student cannot name three or more consecutive letters, SAY: "Look at all of the letters and tell me which ones you do know"`]
 info["Vowels"] = [`SAY: "Can you tell me the sounds of each letter?"`,
-				  `If the student names the letter, count it as the long vowel sound. Then ASK: "Can you tell me another sound for the letter?" The student should name the short vowel sound.`,
-				  `Click or tap the CAPITAL letter for long vowel and the LOWERCASE letter for short vowel sounds.`]
+				  `If the student names the letter, count it as the long vowel sound. Then ASK: "Can you tell me another sound for the letter?" The student should name the short vowel sound.`]
 info["Short vowel"] = [defInfoStr]
 info["Consonant blend short vowel"] = [defInfoStr] 
 info["Digraph short vowel"] = [defInfoStr]
