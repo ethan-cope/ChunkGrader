@@ -17,8 +17,6 @@ windex = 0
 gindex = 0
 nomore = false
 
-
-
 function prepWords(){
 	if (lang == "en")
 	{
@@ -355,7 +353,9 @@ function printPDF() {
 }
 
 $( document ).ready(function() {
-	lang = "es" // set global var lang here!
+	lang = "en" // set global var lang here!
+	lang = (($("#stype").html().includes("English") ? "en" : "es"));
+
 	prepWords()
 	populateTable()
 	$(".HIDE").hide()

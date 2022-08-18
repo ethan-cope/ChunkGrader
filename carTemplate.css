@@ -51,6 +51,11 @@
 	border-radius: 10px;
 }
 
+#endform {
+	margin-left: 1rem;
+	max-width:90%;
+}
+
 .buttondiv{
 	height: 7rem;
 	margin-top: 1rem;
