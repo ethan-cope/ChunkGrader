@@ -363,11 +363,13 @@ $( document ).ready(function() {
 	$(".form-control").hide()
 	$("#nextbutton").click(function(e) {nextButtonPress()})
 
+	/*
 	//this is to test the printing part.
 	for( var i = 0; i<9; i++){
 		console.log(i)
 		nextButtonPress()
 	}
+	*/
 	
 	$(document).on('click', '.pco', function(e) { 
 		let clickgroup = $(this).data("group")
