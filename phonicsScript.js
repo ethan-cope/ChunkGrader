@@ -66,39 +66,39 @@ function prepWords(){
 
 	else if (lang == "es"){
 
-		words["Vowel sounds"]      = ["o", "a", "i", "u", "e"]
-		words["Consonant sounds"]  = ["d", "l", "n", "s", "v", "z", "j", "t", "y", "p", "c", "h", "m", "ch", "ñ", "ll", "g", "f", "b", "q", "r", "x"]
-		words["Open Syllables (CV)"] = ["su", "yo", "luna", "techo", "jefe", "ne", "cu", "mepa", "sila", "rago"] 
-		words["Open Syllables (V, CV)"] = ["año", "iba", "oro", "ella", "ocho", "oba", "udo", "eca", "alle", "imo"] 
-		words["Closed Syllables (CVC, VC)"] = ["sol", "pan", "tambar", "juntos", "artes", "jez", "dor", "cambal", "portir", "entad"] 
-		words["Open Syllable Blends (CCV)"] = ["brazo", "grillo", "clase", "pluma", "globo", "flece", "crima", "bruco", "clopo", "pleso"] 
-		words["Vowel Combinations Open Syllables"] = ["cae", "lee", "hoy", "ruido", "quiere", "cheo", "moa", "ray", "yugia", "vaida"] 
-		words["Dipthongs in Closed Syllables"] = ["puerta", "siempre", "treinta", "cuando", "viento", "pueste", "guanto", "tiemba", "reina", "fianco"] 
+		words["Las vocales"]      = ["o", "a", "i", "u", "e"]
+		words["Las consonantes"]  = ["d", "l", "n", "s", "v", "z", "j", "t", "y", "p", "c", "m", "ch", "ñ", "ll", "g", "f", "b", "q", "r", "x"]
+		words["Silabas abiertas"] = ["su", "yo", "luna", "tela", "jefe", "año", "iba", "oro", "esa", "mar"] 
+		words["Digrafos y sonidos variables"] = ["gema", "hoja", "guiso", "cima", "coce", "quito", "chapa", "llega", "quema", "guerra"] 
+		words["Silabas cerradas"] = ["sol", "pan", "tambar", "juntos", "artes", "vez", "por", "cansar", "partir", "bosque"] 
+		words["Silabas trabadas"] = ["brazo", "grillo", "clase", "pluma", "globo", "tripa", "crece", "madre", "libro", "plato"] 
+		words["Diptongos"] = ["puerta", "siempre", "treinta", "cuando", "viento", "cuesta", "guante", "sueño", "reina", "momia"] 
+		words["Hiatos"] = ["feo", "cae", "leer", "poeta", "maestra", "creo", "toalla", "koala", "tarea", "cacao"] 
 
 		//just a dictionary that keeps track of how many letters per group are currently correct.
-		results["Vowel sounds"] = words["Vowel sounds"].length
-		results["Consonant sounds"] = words["Consonant sounds"].length
-		results["Open Syllables (CV)"] = words["Open Syllables (CV)"].length
-		results["Open Syllables (V, CV)"] = words["Open Syllables (V, CV)"].length
-		results["Closed Syllables (CVC, VC)"] = words["Closed Syllables (CVC, VC)"].length
-		results["Open Syllable Blends (CCV)"] = words["Open Syllable Blends (CCV)"].length
-		results["Vowel Combinations Open Syllables"] = words["Vowel Combinations Open Syllables"].length
-		results["Dipthongs in Closed Syllables"] = words["Dipthongs in Closed Syllables"].length
+		results["Las vocales"] = words["Las vocales"].length
+		results["Las consonantes"] = words["Las consonantes"].length
+		results["Silabas abiertas"] = words["Silabas abiertas"].length
+		results["Digrafos y sonidos variables"] = words["Digrafos y sonidos variables"].length
+		results["Silabas cerradas"] = words["Silabas cerradas"].length
+		results["Silabas trabadas"] = words["Silabas trabadas"].length
+		results["Diptongos"] = words["Diptongos"].length
+		results["Hiatos"] = words["Hiatos"].length
 
 		//info strings
-		info["Vowel sounds"] = [`SAY: "¿Puedes decirme cuales son los sonidos de estas letras?"`]
+		info["Las vocales"] = [`DIGA: "¿Puedes decirme cuales son los sonidos de estas letras?"`]
 
-		info["Consonant sounds"] = ["SAY to the student: \"Mira estas letras. ¿Puedes decirme qué sonido tiene cada letra? \"",
-						  `Be sure to ask if he or she knows of another sound for the letters c and g. Do not expect the student to know more than one sound for r (either /r/ or /rr/ is acceptable). If the students cannot say the sound for three or more consecutive letters SAY: "Mira todas las letras y dime qué sonidos conoces?"`]
+		info["Las consonantes"] = ["DIGA: \"Mira estas letras. ¿Puedes decirme qué sonido tiene cada letra? \"",
+						  `Be sure to ask if he or she knows of another sound for the letters c and g. Do not expect the student to know more than one sound for r (either /r/ or /rr/ is acceptable). If the students cannot say the sound for three or more consecutive letters DIGA: "Mira todas las letras y dime qué sonidos conoces?"`]
 
-		defInfoStr = "SAY: \"Quiero que leas estas palabras. La segunda línea de palabras son inventadas. ¡Hazlo lo mejor que puedas!\""
+		defInfoStr = "DIGA: \"Quiero que leas estas palabras. La segunda línea de palabras son inventadas. ¡Hazlo lo mejor que puedas!\""
 
-		info["Open Syllables (CV)"] = [defInfoStr]
-		info["Open Syllables (V, CV)"] = [defInfoStr] 
-		info["Closed Syllables (CVC, VC)"] = [defInfoStr]
-		info["Open Syllable Blends (CCV)"] = [defInfoStr]
-		info["Vowel Combinations Open Syllables"] = [defInfoStr]
-		info["Dipthongs in Closed Syllables"] = [defInfoStr] 
+		info["Silabas abiertas"] = [defInfoStr]
+		info["Digrafos y sonidos variables"] = [defInfoStr] 
+		info["Silabas cerradas"] = [defInfoStr]
+		info["Silabas trabadas"] = [defInfoStr]
+		info["Diptongos"] = [defInfoStr] 
+		info["Hiatos"] = [defInfoStr]
 	}
 
 	for (group in words) {
@@ -188,7 +188,7 @@ function populateTable(){
 	}
 	else if (lang == "es")
 	{
-		if (groups[gindex]=="Vowel sounds"){
+		if (groups[gindex]=="Las vocales"){
 			$(`
 			<tr class="table-active trShowOnPrint" >
 				<th style="text-align: center;" class="childInfo" colspan=5></th>
@@ -198,14 +198,14 @@ function populateTable(){
 			</tr>
 			`).appendTo($("#wordstab"))
 		}
-		else if (groups[gindex]=="Open Syllables (CV)"){
+		else if (groups[gindex]=="Silabas abiertas"){
 			$(`
 			<tr class='table-active'>
 				<th style="text-align: center;" colspan=5>Reading and Decoding</th>
 			</tr>
 			`).appendTo($("#wordstab"))
 		}
-		else if (groups[gindex]=="Open Syllable Blends (CCV)"){
+		else if (groups[gindex]=="Silabas trabadas"){
 			//need 2 blank rows here to pad out printing.
 			$(`<tr class="trShowOnPrint" style="background-color: transparent;"><td colspan="5">&nbsp;</td></tr>`).appendTo($("#wordstab"))
 			$(`<tr class="trShowOnPrint" style="background-color: transparent;"><td colspan="5">&nbsp;</td></tr>`).appendTo($("#wordstab"))
@@ -326,10 +326,9 @@ function printPDF() {
 	//we want the date to be on the final report and in the filename.
 
 	//add in name at top inside of printable div and show it.
-	$(".childInfo").text(`${studentname} | Grade: ${$(".gradein").val()} | ${datestr}`)
+	$(".childInfo").text(`${studentname} | Grade: ${$(".gradein").val()}, ${$(".schoolin").val()} | ${datestr}`)
 	$(".trShowOnPrint").show()
 	var element = document.getElementById("printable")
-	console.log($(".form-control").val())
 	element.style.width = '700px';
 	element.style.height = '1800px';
 	element.style.scale = '.95';
@@ -364,12 +363,11 @@ $( document ).ready(function() {
 	$(".form-control").hide()
 	$("#nextbutton").click(function(e) {nextButtonPress()})
 
-	/*
+	//this is to test the printing part.
 	for( var i = 0; i<9; i++){
 		console.log(i)
 		nextButtonPress()
 	}
-	*/
 	
 	$(document).on('click', '.pco', function(e) { 
 		let clickgroup = $(this).data("group")
