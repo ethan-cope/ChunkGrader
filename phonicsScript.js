@@ -70,7 +70,7 @@ function prepWords(){
 		words["Las consonantes"]  = ["d", "l", "n", "s", "v", "z", "j", "t", "y", "p", "c", "m", "ch", "ñ", "ll", "g", "f", "b", "q", "r", "x"]
 		words["Silabas abiertas"] = ["su", "yo", "luna", "tela", "jefe", "año", "iba", "oro", "esa", "mar"] 
 		words["Digrafos y sonidos variables"] = ["gema", "hoja", "guiso", "cima", "coce", "quito", "chapa", "llega", "quema", "guerra"] 
-		words["Silabas cerradas"] = ["sol", "pan", "tambar", "juntos", "artes", "vez", "por", "cansar", "partir", "bosque"] 
+		words["Silabas cerradas"] = ["sol", "pan", "tambor", "juntos", "artes", "vez", "por", "cansar", "partir", "bosque"] 
 		words["Silabas trabadas"] = ["brazo", "grillo", "clase", "pluma", "globo", "tripa", "crece", "madre", "libro", "plato"] 
 		words["Diptongos"] = ["puerta", "siempre", "treinta", "cuando", "viento", "cuesta", "guante", "sueño", "reina", "momia"] 
 		words["Hiatos"] = ["feo", "cae", "leer", "poeta", "maestra", "creo", "toalla", "koala", "tarea", "cacao"] 
