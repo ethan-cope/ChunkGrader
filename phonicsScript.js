@@ -91,7 +91,7 @@ function prepWords(){
 		info["Las consonantes"] = ["DIGA: \"Mira estas letras. ¿Puedes decirme qué sonido tiene cada letra? \"",
 						  `Be sure to ask if he or she knows of another sound for the letters c and g. Do not expect the student to know more than one sound for r (either /r/ or /rr/ is acceptable). If the students cannot say the sound for three or more consecutive letters DIGA: "Mira todas las letras y dime qué sonidos conoces?"`]
 
-		defInfoStr = "DIGA: \"Quiero que leas estas palabras. La segunda línea de palabras son inventadas. ¡Hazlo lo mejor que puedas!\""
+		defInfoStr = "DIGA: \"Quiero que leas estas palabras. ¡Hazlo lo mejor que puedas!\""
 
 		info["Silabas abiertas"] = [defInfoStr]
 		info["Digrafos y sonidos variables"] = [defInfoStr] 
