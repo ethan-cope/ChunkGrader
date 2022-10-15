@@ -90,6 +90,18 @@
 	max-width:90%;
 }
 
+.img-navbar{
+	max-width: 75%;
+}
+
+.img-logo{
+	max-width:100%;
+	width: 200px;
+}
+.nottoobig{
+	max-width: 100%;
+	width: 400px;
+}
 .pco{
 	cursor: pointer;
 }
