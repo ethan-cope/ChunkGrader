@@ -30,10 +30,10 @@ function prepWords(){
 		words["Short vowel"] = ["sip", "mat", "let", "bun", "hog", "rut", "fit", "bat", "hot", "set"] 
 		words["Consonant blend short vowel"] = ["slip", "brag", "trap", "skit", "camp", "drink", "glad", "clop", "plug", "stand"] 
 		words["Long vowel"] = ["tape", "poke", "cute", "kite", "Pete", "file", "game", "here", "tube", "code"] 
-		words["Digraph short vowel"] = ["when", "chop", "thin", "graph", "wick", "ship", "rash", "ring", "then", "rich"] 
+		words["Digraph short vowel"] = ["when", "chop", "thin", "Phil", "wick", "ship", "rash", "ring", "then", "rich"] 
 		words["Vowel team"] = ["stain", "play", "boat", "light", "sheet", "try", "row", "rain", "heat", "roast"] 
 		words["R-controlled vowel"] = ["harm", "dirt", "form", "fern", "surf", "worm", "pert", "bark", "turn", "bird"] 
-		words["Variant vowel"] = ["soy", "town", "slaw", "good", "shout", "moon", "new", "count", "coin", "vault"] 
+		words["Variant vowel"] = ["soy", "town", "slaw", "good", "shout", "moon", "new", "count", "coin", "fault"] 
 
 
 
