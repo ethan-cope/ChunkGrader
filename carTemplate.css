@@ -46,10 +46,6 @@
 	padding: 1px;
 }
 
-.dotborder {
-	border: dashed 3px;
-	border-radius: 10px;
-}
 
 #endform {
 	margin-left: 1rem;
@@ -117,11 +113,16 @@
 
 .wrong{
 	background-color: tomato; 
+	outline: 6px solid tomato;
+	outline-offset: -6px;
 }
 
 .wrongtoggle{
 	background-color: tomato;
 	cursor: pointer;
+	outline: 6px solid tomato;
+	outline-offset: -6px;
+
 }
 
 

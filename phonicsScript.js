@@ -218,7 +218,7 @@ function populateTable(){
 	divider = `
 	<tr class='table-active'>
 		<th colspan="${Math.ceil(numMembers/rows)-1}">${groups[gindex]}</th>
-		<th class="result${gindex}" style="background-color:limegreen;"> ${numMembers}/${numMembers} </th>
+		<th class="result${gindex}" style="background-color:limegreen; outline:6px solid limegreen; outline-offset:-6px"> ${numMembers}/${numMembers} </th>
 	</tr>
 	`
 
@@ -269,7 +269,8 @@ function populateTable(){
 
 function reparseResult(element, clickgroup){
 	//this sets the correct background color for each part of the form.
-	border = ""
+	outline = ""
+	outlineOffset = "-6px "
 	$(`.result${clickgroup}`).text(results[groups[clickgroup]]+"/"+words[groups[clickgroup]].length)
 
 	//fraction of words that are correct.
@@ -277,18 +278,22 @@ function reparseResult(element, clickgroup){
 
 	if (correctFrac > .8){
 		bgcolor="limegreen"
+		outline="6px solid limegreen"
 	}
 	else if (correctFrac <= .8 && correctFrac >= .7){
 		bgcolor="FFEA00"
+		outline="6px solid #FFEA00"
 	}
 	else if (correctFrac < .7){
 		bgcolor="red"
+		outline="6px solid red"
 		//border="solid 2px"
 		//border = moving elements around
 	}
 
 	$(`.result${clickgroup}`).css({'backgroundColor': bgcolor})
-	$(`.result${clickgroup}`).css({'border': border})
+	$(`.result${clickgroup}`).css({'outline': outline})
+	$(`.result${clickgroup}`).css({'outline-offset': outlineOffset})
 	//background-color: #FFEA00 !important;
 
 }
@@ -296,10 +301,11 @@ function reparseResult(element, clickgroup){
 function printPDF() {
 	//this prepares the site to be printed and prints a PDF. 
 	//note that this screws up the formatting of the site, and it needs to be reloaded to run another test.
-	
+
 	console.log("PRINTING PDF")
 	studentname = `${$(".fnamein").val()} ${$(".lnamein").val()}`
-	$(`<tr style="background-color: transparent;"><td colspan="5">&nbsp;</td></tr>`).appendTo($("#wordstab"))
+	// only necessary for the scuffed image-based printing.
+	//$(`<tr style="background-color: transparent;"><td colspan="5">&nbsp;</td></tr>`).appendTo($("#wordstab"))
 	$(".trHideOnPrint").hide()
 
 	curdate = new Date(Date.now())
@@ -325,13 +331,26 @@ function printPDF() {
 
 	//we want the date to be on the final report and in the filename.
 
+
 	//add in name at top inside of printable div and show it.
 	$(".childInfo").text(`${studentname} | Grade: ${$(".gradein").val()}, ${$(".schoolin").val()} | ${datestr}`)
 	$(".trShowOnPrint").show()
+
+
+	// for some reason the window's title translates to PDF filename 
+	filename = `${studentname.split(' ').join('')+"_"+yeardes}_Phonics`;
+	document.title = filename;
+
+	window.print()
+	location.reload();
+
+	/*
+	legacy scuffed printing that encodes as an image
 	var element = document.getElementById("printable")
 	element.style.width = '700px';
 	element.style.height = '1800px';
 	element.style.scale = '.95';
+
 
 	var opt = {
 		margin: 0.5,
@@ -349,6 +368,7 @@ function printPDF() {
 		console.log("reload here!")
 		//location.reload();
 	})
+	*/
 }
 
 $( document ).ready(function() {
@@ -364,7 +384,7 @@ $( document ).ready(function() {
 	$("#nextbutton").click(function(e) {nextButtonPress()})
 
 	/*
-	//this is to test the printing part.
+	//uncomment this to test the printing part only.
 	for( var i = 0; i<9; i++){
 		console.log(i)
 		nextButtonPress()
